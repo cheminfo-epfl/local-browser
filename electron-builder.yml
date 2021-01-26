@@ -1,4 +1,4 @@
-productName: Folder web server
+artifactName: ${name}-${os}.${ext}
 win:
   target: portable
 mac:

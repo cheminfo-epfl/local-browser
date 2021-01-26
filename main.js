@@ -2,6 +2,7 @@
 const { app, BrowserWindow, dialog, ipcMain } = require('electron')
 const { join } = require('path')
 const { existsSync } = require('fs');
+let rootPath = require('electron-root-path').rootPath;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -21,8 +22,19 @@ function createWindow() {
     }
   })
 
+
+
+  if (process.env.PORTABLE_EXECUTABLE_DIR) {
+    rootPath = process.env.PORTABLE_EXECUTABLE_DIR;
+  }
+
+  let path = join(rootPath, 'index.html');
+  if (!existsSync(path)) {
+    path = join(rootPath, '..', 'index.html');
+  }
+
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile(path)
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
