@@ -1,0 +1,5 @@
+productName: Folder web server
+win:
+  target: portable
+mac:
+  target: dmg
