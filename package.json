@@ -1,13 +1,13 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "local-browser",
+  "version": "0.0.0",
+  "description": "A minimal Electron application to browse a local website",
   "main": "main.js",
   "scripts": {
     "build": "electron-builder -m -w",
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/cheminfo-epfl/local-browser",
   "keywords": [
     "Electron",
     "quick",
