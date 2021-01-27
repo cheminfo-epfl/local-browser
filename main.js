@@ -32,6 +32,9 @@ function createWindow() {
   if (!existsSync(path)) {
     path = join(rootPath, '..', 'index.html');
   }
+  if (!existsSync(path)) {
+    path = 'index.html';
+  }
 
   // and load the index.html of the app.
   mainWindow.loadFile(path)
